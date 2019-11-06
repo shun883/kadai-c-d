@@ -5,7 +5,8 @@ class Customer:
         self.age = age
 
     def full_name(self):
-        print(self.first_name, self.family_name)
+        return f'{self.first_name} {self.family_name}'
+
 
     def entry_fee(self):
         if self.age <= 3:
@@ -18,8 +19,9 @@ class Customer:
             return 1200
         return 500
 
-    def info_csv(self):
-        return f'{self.first_name} {self.family_name},{self.age},{self.entry_fee()}'
+    def info_csv(self, sep=','):
+        info_list = [self.full_name(), str(self.age), str(self.entry_fee())]
+        return sep.join(info_list)
 
 
 # c-1
@@ -59,7 +61,7 @@ class Customer:
 # ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
 # ken_info = ken.info_csv()
 # print(ken_info)
-#
+
 # tom = Customer(first_name="Tom", family_name="Ford", age= 57)
 # tom_info = tom.info_csv()  # "Tom Ford,57,1500" という値を返す
 # print(tom_info)
@@ -77,3 +79,22 @@ class Customer:
 # print(namihei.entry_fee())
 
 # c-7
+ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
+info_tap = ken.info_csv('\t')  # "en Tanaka 15  1000" という値を返す
+print(info_tap)
+
+tom = Customer(first_name="Tom", family_name="Ford", age=57)
+csv = tom.info_csv('\t')  # "Tom Ford   57  1500" という値を返す
+print(csv)
+
+ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
+csv = ieyasu.info_csv('\t')  # "Ieyasu  Tokugawa    73  1200" という値を返す
+print(csv)
+
+# c-8
+csv = ken.info_csv(sep='|')  # "Ken Tanaka|15|1000" という値を返す
+print(csv)
+csv = tom.info_csv(sep='|')  # "Tom Ford|57|1500" という値を返す
+print(csv)
+csv = ieyasu.info_csv(sep='|')  # "Ieyasu Tokugawa|73|1200" という値を返す
+print(csv)
