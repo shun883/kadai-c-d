@@ -8,11 +8,15 @@ class Customer:
         print(self.first_name, self.family_name)
 
     def entry_fee(self):
+        if self.age <= 3:
+            return '無料'
         if self.age < 20:
             return 1000
         if self.age < 65:
             return 1500
-        return 1200
+        if self.age < 75:
+            return 1200
+        return 500
 
     def info_csv(self):
         return f'{self.first_name} {self.family_name},{self.age},{self.entry_fee()}'
@@ -63,3 +67,13 @@ class Customer:
 # ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
 # ieyasu_info = ieyasu.info_csv()  # "Ieyasu Tokugawa,73,1200" という値を返す
 # print(ieyasu_info)
+
+# c-5
+# ikura = Customer(first_name='ikura', family_name='Namino', age=2)
+# print(ikura.entry_fee())
+
+# c-6
+# namihei = Customer(first_name='Namihei', family_name='Isono', age=76)
+# print(namihei.entry_fee())
+
+# c-7
