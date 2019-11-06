@@ -14,6 +14,10 @@ class Customer:
             return 1500
         return 1200
 
+    def info_csv(self):
+        return f'{self.first_name} {self.family_name},{self.age},{self.entry_fee()}'
+
+
 # c-1
 # ken = Customer(first_name='Ken', family_name='Tanaka')
 # ken.full_name()
@@ -35,14 +39,27 @@ class Customer:
 # print(ieyasu_age)
 
 # c-3
-ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
-ken_fee = ken.entry_fee()
-print(ken_fee)
+# ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
+# ken_fee = ken.entry_fee()
+# print(ken_fee)
+#
+# tom = Customer(first_name="Tom", family_name="Ford", age=57)
+# tom_fee = tom.entry_fee()
+# print(tom_fee)
+#
+# ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
+# ieyasu_fee = ieyasu.entry_fee()
+# print(ieyasu_fee)
 
-tom = Customer(first_name="Tom", family_name="Ford", age=57)
-tom_fee = tom.entry_fee()
-print(tom_fee)
+# c-4
+# ken = Customer(first_name="Ken", family_name="Tanaka", age=15)
+# ken_info = ken.info_csv()
+# print(ken_info)
+#
+# tom = Customer(first_name="Tom", family_name="Ford", age= 57)
+# tom_info = tom.info_csv()  # "Tom Ford,57,1500" という値を返す
+# print(tom_info)
 
-ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
-ieyasu_fee = ieyasu.entry_fee()
-print(ieyasu_fee)
+# ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
+# ieyasu_info = ieyasu.info_csv()  # "Ieyasu Tokugawa,73,1200" という値を返す
+# print(ieyasu_info)
