@@ -17,5 +17,14 @@ class Customer:
 
 # c-2
 ken = Customer(first_name='Ken', family_name='Tanaka', age=15)
-age = ken.age
-print(age)
+ken_age = ken.age
+print(ken_age)
+
+tom = Customer(first_name="Tom", family_name="Ford", age=57)
+tom_age = tom.age
+print(tom_age)
+
+ieyasu = Customer(first_name="Ieyasu", family_name="Tokugawa", age=73)
+ieyasu_age = ieyasu.age
+print(ieyasu_age)
+# c-3
